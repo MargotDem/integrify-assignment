@@ -5,7 +5,8 @@ import axios from 'axios'
 export default function FormContainer ({
 	updateCity,
 	city,
-	updateCityInfo
+	updateCityInfo,
+	updateCityWeather
 }) {
 
 	const [error, setError] = useState(null);
@@ -14,12 +15,19 @@ export default function FormContainer ({
 		setError(error);
 	}
 
+	const handleRequestError = err => {
+		console.log('There was an error with the request:');
+		setError('There was an error with the request');
+		console.log(err);
+	}
+
 	function handleSubmission (city) {
 		axios.get(
 			'http://dataservice.accuweather.com/locations/v1/cities/search',
 			{ params: {
-				q: city,
 				apikey: process.env.REACT_APP_ACCUWEATHER_API_KEY,
+				//apikey: 34,
+				q: city
 			}}
 		)
 		.then(res => {
@@ -31,12 +39,29 @@ export default function FormContainer ({
 			}
 			else {
 				updateCityInfo(cities[0]);
+				axios.get(
+					'http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + cities[0].Key,
+					{
+						params: {
+							apikey: process.env.REACT_APP_ACCUWEATHER_API_KEY,
+							details: true,
+							metric: true
+						}
+					}
+				)
+				.then(res => {
+					//console.log('city forecast is:');
+					//console.log(res.data);
+					//what if no weather information?
+					updateCityWeather(res.data);
+				})
+				.catch(err => {
+					handleRequestError(err);
+				});
 			}
 		})
 		.catch(err => {
-			console.log('There was an error with the request:');
-			setError('There was an error with the request');
-			console.log(err);
+			handleRequestError(err);
 		});
 	}
 	function handleInputChange (e) {

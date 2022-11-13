@@ -5,6 +5,7 @@ import ForecastCard from './ForecastCard'
 export default function Main () {
 	const [city, setCity] = useState('');
 	const [cityInfo, setCityInfo] = useState({});
+	const [cityWeather, setCityWeather] = useState({});
 	
 	const updateCity = city => {
 		setCity(city);
@@ -12,6 +13,10 @@ export default function Main () {
 
 	const updateCityInfo = cityInfo => {
 		setCityInfo({...cityInfo});
+	}
+
+	const updateCityWeather = cityWeather => {
+		setCityWeather({...cityWeather});
 	}
 
 	useEffect(() => {
@@ -22,13 +27,15 @@ export default function Main () {
 	return (
 		<div>
 				<FormContainer
-					updateCity={updateCity}
 					city={city}
+					updateCity={updateCity}
 					updateCityInfo={updateCityInfo}
+					updateCityWeather={updateCityWeather}
 				/>
       			<ForecastCard
 				  	city={city}
 				  	cityInfo={cityInfo}
+				  	cityWeather={cityWeather}
 				/>
 		</div>
 	)
