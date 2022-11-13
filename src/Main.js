@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Form from './Form'
+import FormContainer from './FormContainer'
 import ForecastCard from './ForecastCard'
 
 export default function Main () {
 	const [city, setCity] = useState('');
-	const [cityInfo, setCityInfo] = useState({
-
-	});
+	const [cityInfo, setCityInfo] = useState({});
 	
 	const updateCity = city => {
 		setCity(city);
@@ -17,13 +15,13 @@ export default function Main () {
 	}
 
 	useEffect(() => {
-		console.log("here");
-		console.log(cityInfo);
-	  });
+		//console.log("here");
+		//console.log(cityInfo);
+	});
 	
-	 return (
+	return (
 		<div>
-				<Form
+				<FormContainer
 					updateCity={updateCity}
 					city={city}
 					updateCityInfo={updateCityInfo}

@@ -1,42 +1,13 @@
-import React  from 'react'
-import axios from 'axios'
+import Error from './Error'
 
 export default function Form ({
-	updateCity,
+	handleInputChange,
+	handleSubmission,
+	handleKeyPress,
 	city,
-	updateCityInfo
+	error,
+	test
 }) {
-	function handleSubmission (city) {
-		console.log("form submitted, the city is '" + city + "'");
-		axios.get(
-			'http://dataservice.accuweather.com/locations/v1/cities/search',
-			{ params: {
-				q: city,
-				apikey: process.env.REACT_APP_ACCUWEATHER_API_KEY
-			}}
-		)
-		.then( res => {
-			const cities = res.data;
-			console.log("cities:");
-			console.log(cities);
-			updateCityInfo(cities[0]);
-		});
-	}
-
-	function handleInputChange (e) {
-		let city =  e.target.value;
-		updateCity(city);
-	}
-
-	function handleKeyPress (event) {
-		if (event.key === 'Enter') {
-			event.preventDefault();
-			event.target.value = '';
-			handleSubmission(city);
-			//updateCity('');
-		  }
-	}
-
 	return (
 		<div>
 			<form className='form' action=''>
@@ -55,8 +26,7 @@ export default function Form ({
 					Search weather
 				</div>
 			</form>
-			
+			{error ? <Error error={error} /> : null}
 		</div>
 	);
-
 }

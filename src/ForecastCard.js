@@ -1,9 +1,24 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 
-export default class ForecastCard extends Component {
-	render () {
+export default function ForecastCard ({ cityInfo, city }) {
+	
+	useEffect(() => {
+		console.log("the city info:");
+		console.log(cityInfo);
+	});
+
+	if (Object.keys(cityInfo).length !== 0) {
 		return (
-			<div>the card</div>
+			<div>
+				the card
+				<br />
+				{cityInfo.EnglishName}
+			</div>
+		);
+	}
+	else {
+		return (
+			<div></div>
 		)
 	}
 }
