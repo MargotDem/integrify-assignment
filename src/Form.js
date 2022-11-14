@@ -10,23 +10,24 @@ export default function Form ({
 }) {
 	return (
 		<div>
-			<form className='form' action=''>
+			<form className='Form' action=''>
 				<input
+					className='InputField'
 					type='text'
 					name='city'
-					placeholder='City'
+					placeholder='Search by city'
 					onChange={handleInputChange}
 					onKeyPress={handleKeyPress}
 					/>
 				<div
-					className='my-button'
+					className='SubmitButton'
 					name='submit-button'
 					onClick={() => { handleSubmission(city) }}
 				>
-					Search weather
+					Search
 				</div>
+				{error ? <Error error={error} /> : null}
 			</form>
-			{error ? <Error error={error} /> : null}
 		</div>
 	);
 }

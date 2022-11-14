@@ -1,7 +1,9 @@
 export default function RequestError ({ error }) {
-	console.log("this is the message WTF");
+	console.log("this is the error message");
 	console.log(error);
 	return (
-		<div>{error}</div>
+		<div className='Error'>
+			{error}
+		</div>
 	);
 }

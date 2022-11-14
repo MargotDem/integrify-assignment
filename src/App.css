@@ -1,12 +1,148 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #e4eaf0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center; 
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: #2e2e2e;
 }
+
+.Header {
+  font-size: 30px;
+  font-weight: bold;
+  color: #093d6b;
+  margin-bottom: 50px;
+}
+
+.Main {
+
+}
+
+.ForecastCard {
+  margin-top: 20px;
+  background-color: #135d9c;
+  /*width: fit-content;*/
+  width: 400px;
+  border-radius:  10px;
+  color: #f5f8fa;
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.CountryCode {
+  margin-left: 10px;
+  background-color: brown;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 10px;
+}
+
+.CityHeader {
+  padding: 15px 0px 10px 0px;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.DayNightSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.DayNightSection {
+  padding: 20px 0px 20px 0px;
+}
+
+.DayNightSection img {
+  height: 90px;
+  width: 90px;
+  margin-bottom: -25px;
+  filter: invert(97%) sepia(34%) saturate(343%) hue-rotate(175deg) brightness(101%) contrast(96%);
+}
+
+.Temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 0px 20px 0px;
+}
+
+.NextForecast {
+  padding: 10px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.NextForecast div {
+  border-top: 1px solid #ccdbe6;
+  width: 40%;
+  margin-bottom: 15px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.Error {
+  position: absolute;
+  top: 35px;
+}
+
+.SubmitButton {
+  background-color: #65139c;
+  margin-left: 10px;
+  border-radius: 4px;
+  color: #dce2e6;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.InputField {
+  border: none;
+  border-radius: 4px;
+  color: #3b3d40;
+}
+
+.InputField, .SubmitButton {
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+::placeholder {
+  color: #757b80;
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #757b80;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #757b80;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+

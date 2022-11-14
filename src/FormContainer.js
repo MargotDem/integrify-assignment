@@ -39,6 +39,7 @@ export default function FormContainer ({
 			}
 			else {
 				updateCityInfo(cities[0]);
+				//console.log(JSON.stringify(cities[0]));
 				axios.get(
 					'http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + cities[0].Key,
 					{
@@ -50,10 +51,11 @@ export default function FormContainer ({
 					}
 				)
 				.then(res => {
-					//console.log('city forecast is:');
+					console.log('city forecast is:');
 					//console.log(res.data);
 					//what if no weather information?
 					updateCityWeather(res.data);
+					//console.log(JSON.stringify(res.data));
 				})
 				.catch(err => {
 					handleRequestError(err);
@@ -75,7 +77,7 @@ export default function FormContainer ({
 		if (event.key === 'Enter') {
 			event.preventDefault();
 			event.target.value = '';
-			handleSubmission(city);
+			//handleSubmission(city);
 		}
 	}
 

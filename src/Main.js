@@ -25,7 +25,7 @@ export default function Main () {
 	});
 	
 	return (
-		<div>
+		<div className='Main'>
 				<FormContainer
 					city={city}
 					updateCity={updateCity}
