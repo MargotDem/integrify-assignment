@@ -20,66 +20,62 @@ export default function ForecastCard ({
 		console.log(cityWeather);
 	});
 
-	if (Object.keys(cityInfo).length !== 0 && Object.keys(cityWeather).length !== 0) {
-		return (
-			<div className='ForecastCard'>
-				<div className='CityHeader'>
-					{cityInfo.EnglishName.toUpperCase()}
+	if (Object.keys(cityInfo).length === 0 || Object.keys(cityWeather).length === 0) {
+		return (null);
+		//cityInfo = sydneyInfo;
+		//cityWeather = sydneyWeather;
+	}
+
+	return (
+		<div className='ForecastCard'>
+			<div className='CityHeader'>
+				{cityInfo.EnglishName.toUpperCase()}
+				<div className='CountryCode'>{cityInfo.Country.ID}</div>
+			</div>
+		
+			<div className='Temperature'>
+				<div>
+					Min&nbsp;
+					<span className='RealTemperature'>
+						{cityWeather.DailyForecasts[0].Temperature.Minimum.Value} °C
+					</span>
+					<br/>
+					<span className='FeelTemperature'>
+						real feel {cityWeather.DailyForecasts[0].RealFeelTemperature.Minimum.Value} °C
+					</span>
 				</div>
-				<div className='MiddleSection'>
-	
-				</div>
-				<div className='DayNightSection'>
-	
-				</div>
-				<div className='NextForecast'>
-					{cityWeather.Headline.Text}
+				<div>
+					Max&nbsp;
+					<span className='RealTemperature'>
+						{cityWeather.DailyForecasts[0].Temperature.Maximum.Value} °C
+					</span>
+					<br />
+					<span className='FeelTemperature'>
+						real feel {cityWeather.DailyForecasts[0].RealFeelTemperature.Maximum.Value} °C
+					</span>
+					
 				</div>
 			</div>
-		);
-	}
-	else {
-		cityInfo = sydneyInfo;
-		cityWeather = sydneyWeather;
-		return (
-			<div className='ForecastCard'>
-				<div className='CityHeader'>
-					{cityInfo.EnglishName.toUpperCase()}
-					<div className='CountryCode'>{cityInfo.Country.ID}</div>
-				</div>
-			
-				<div className='Temperature'>
+			<div className='DayNightSection'>
+				<div>
+					<div className='Title'>Day</div>
+						<img src ={'./icons/' + cityWeather.DailyForecasts[0].Day.Icon + '.svg'} alt='weather icon'/>
 					<div>
-						Min {sydneyWeather.DailyForecasts[0].Temperature.Minimum.Value} °C
-						<br/>real feel {sydneyWeather.DailyForecasts[0].RealFeelTemperature.Minimum.Value} °C
-					</div>
-					<div>
-						Max {sydneyWeather.DailyForecasts[0].Temperature.Maximum.Value} °C
-						<br />real feel {sydneyWeather.DailyForecasts[0].RealFeelTemperature.Maximum.Value} °C
-						
+						{cityWeather.DailyForecasts[0].Day.IconPhrase}
 					</div>
 				</div>
-				<div className='DayNightSection'>
+				<div>
+					<div className='Title'>Night</div>
+					<img src ={'./icons/' + cityWeather.DailyForecasts[0].Night.Icon + '.svg'} alt='weather icon'/>
 					<div>
-						<div>Day</div>
-							<img src ={'./icons/' + sydneyWeather.DailyForecasts[0].Day.Icon + '.svg'} alt='weather icon'/>
-						<div>
-							{sydneyWeather.DailyForecasts[0].Day.IconPhrase}
-						</div>
+						{cityWeather.DailyForecasts[0].Night.IconPhrase}
 					</div>
-					<div>
-						<div>Night</div>
-						<img src ={'./icons/' + sydneyWeather.DailyForecasts[0].Night.Icon + '.svg'} alt='weather icon'/>
-						<div>
-							{sydneyWeather.DailyForecasts[0].Night.IconPhrase}
-						</div>
-					</div>
-				</div>
-				<div className='NextForecast'>
-					<div></div>
-					{cityWeather.Headline.Text}
 				</div>
 			</div>
-		);
-	}
+			<div className='NextForecast'>
+				<div></div>
+				{cityWeather.Headline.Text}
+			</div>
+		</div>
+	);
 }

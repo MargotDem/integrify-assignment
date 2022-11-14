@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+
   font-size: 15px;
   letter-spacing: 0.8px;
   color: #2e2e2e;
@@ -16,7 +16,7 @@
   font-size: 30px;
   font-weight: bold;
   color: #093d6b;
-  margin-bottom: 50px;
+  margin: 60px 0px 60px 0px;
 }
 
 .Main {
@@ -42,7 +42,7 @@
 }
 
 .CityHeader {
-  padding: 15px 0px 10px 0px;
+  padding: 15px 0px 15px 0px;
   letter-spacing: 2px;
   display: flex;
   flex-direction: row;
@@ -58,14 +58,19 @@
 
 }
 
+.DayNightSection .Title {
+  font-size: 14px;
+}
+
 .DayNightSection {
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0px 40px 0px;
 }
 
 .DayNightSection img {
   height: 90px;
   width: 90px;
-  margin-bottom: -25px;
+  margin-bottom: -20px;
+  margin-top: -5px;
   filter: invert(97%) sepia(34%) saturate(343%) hue-rotate(175deg) brightness(101%) contrast(96%);
 }
 
@@ -74,11 +79,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 20px 0px 20px 0px;
+  padding: 30px 0px 30px 0px;
+}
+
+.RealTemperature {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.FeelTemperature {
+  font-size: 12px;
 }
 
 .NextForecast {
-  padding: 10px 0px 20px 0px;
+  padding: 10px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
