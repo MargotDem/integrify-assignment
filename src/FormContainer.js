@@ -23,7 +23,7 @@ export default function FormContainer ({
 
 	function handleSubmission (city) {
 		axios.get(
-			'http://dataservice.accuweather.com/locations/v1/cities/search',
+			'https://dataservice.accuweather.com/locations/v1/cities/search',
 			{ params: {
 				apikey: process.env.REACT_APP_ACCUWEATHER_API_KEY,
 				q: city
@@ -39,7 +39,7 @@ export default function FormContainer ({
 			else {
 				updateCityInfo(cities[0]);
 				axios.get(
-					'http://dataservice.accuweather.com/forecasts/v1/daily/1day/' + cities[0].Key,
+					'https://dataservice.accuweather.com/forecasts/v1/daily/1day/' + cities[0].Key,
 					{
 						params: {
 							apikey: process.env.REACT_APP_ACCUWEATHER_API_KEY,
