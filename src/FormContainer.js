@@ -74,7 +74,7 @@ export default function FormContainer ({
 		if (event.key === 'Enter') {
 			event.preventDefault();
 			event.target.value = '';
-			//handleSubmission(city);
+			handleSubmission(city);
 		}
 	}
 
@@ -87,5 +87,4 @@ export default function FormContainer ({
 			error={error}
 		/>
 	);
-
 }

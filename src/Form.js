@@ -15,7 +15,7 @@ export default function Form ({
 					className='InputField'
 					type='text'
 					name='city'
-					placeholder='Search by city'
+					placeholder='City'
 					onChange={handleInputChange}
 					onKeyPress={handleKeyPress}
 					/>
