@@ -4,4 +4,4 @@ This is a simple weather app that lets the user search a city by name and displa
 
 To launch it, run at the base of the repo:
 ```npm install
-```npm start
+npm start```
