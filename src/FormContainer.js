@@ -2,6 +2,10 @@ import { useState }  from 'react';
 import Form  from './Form';
 import axios from 'axios';
 
+function clearConsole () {
+	console.clear();
+}
+
 export default function FormContainer ({
 	updateCity,
 	city,
@@ -16,9 +20,9 @@ export default function FormContainer ({
 	}
 
 	const handleRequestError = err => {
-		console.log('There was an error with the request:');
+		//console.log('There was an error with the request:');
 		setError('There was an error with the request');
-		console.log(err);
+		//console.log(err);
 	}
 
 	function handleSubmission (city) {
@@ -54,11 +58,13 @@ export default function FormContainer ({
 					updateCityWeather(res.data);
 				})
 				.catch(err => {
+					setTimeout(clearConsole, 1);
 					handleRequestError(err);
 				});
 			}
 		})
 		.catch(err => {
+			setTimeout(clearConsole, 1);
 			handleRequestError(err);
 		});
 	}
