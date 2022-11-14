@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import FormContainer from './FormContainer'
-import ForecastCard from './ForecastCard'
+import { useState, useEffect } from 'react';
+import FormContainer from './FormContainer';
+import ForecastCard from './ForecastCard';
 
 export default function Main () {
 	const [city, setCity] = useState('');
@@ -20,7 +20,7 @@ export default function Main () {
 	}
 
 	useEffect(() => {
-		//console.log("here");
+		//console.log("cityInfo is:");
 		//console.log(cityInfo);
 	});
 	

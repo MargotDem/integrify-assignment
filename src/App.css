@@ -23,10 +23,15 @@
 
 }
 
+
+
+/*
+    Forecast Card
+*/
+
 .ForecastCard {
   margin-top: 20px;
   background-color: #135d9c;
-  /*width: fit-content;*/
   width: 400px;
   border-radius:  10px;
   color: #f5f8fa;
@@ -106,6 +111,12 @@
   margin-bottom: 15px;
 }
 
+
+
+/*
+    Form
+*/
+
 .Form {
   display: flex;
   flex-direction: row;
@@ -159,5 +170,3 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-
-
